@@ -4,6 +4,8 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 import { AdminLayout } from "@/components/admin/admin-layout"
+import { ScraperProvider } from "@/context/ScraperContext"
+import { GlobalScraperIndicator } from "@/components/admin/GlobalScraperIndicator"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,9 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="font-sans antialiased bg-background text-foreground">
-        <AdminLayout>
-          {children}
-        </AdminLayout>
+        <ScraperProvider>
+          <AdminLayout>
+            {children}
+            <GlobalScraperIndicator />
+          </AdminLayout>
+        </ScraperProvider>
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>

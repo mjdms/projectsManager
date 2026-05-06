@@ -28,13 +28,6 @@ export function WelcomeHero() {
           You have <span className="text-foreground"><CountUp end={12} duration={800} /> active projects</span> and reached <span className="text-success font-semibold"><CountUp end={84} duration={1000} suffix="%" /></span> of your weekly goals.
         </p>
       </div>
-      <button
-        type="button"
-        className="shrink-0 flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-primary/10 text-primary text-[13px] font-semibold hover:bg-primary/20 transition-colors"
-      >
-        <Plus className="h-4 w-4" strokeWidth={2.5} />
-        New project
-      </button>
     </header>
   )
 }

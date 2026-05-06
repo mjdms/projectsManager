@@ -13,6 +13,7 @@ import {
   Bell,
   Settings,
   Search,
+  Terminal,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -27,7 +28,9 @@ type NavItem = {
 const main: NavItem[] = [
   { id: "dashboard", label: "Dashboard", icon: Home, href: "/" },
   { id: "projects", label: "Projects", icon: FolderKanban, href: "/projects", badge: "12" },
+  { id: "clients", label: "Clients", icon: Users, href: "/clients" },
   { id: "tasks", label: "Tasks", icon: Layers, href: "/tasks" },
+  { id: "scripts", label: "Scripts", icon: Terminal, href: "/scripts" },
   { id: "calendar", label: "Calendar", icon: CalendarDays, href: "/calendar" },
   { id: "reports", label: "Reports", icon: BarChart2, href: "/reports" },
 ]

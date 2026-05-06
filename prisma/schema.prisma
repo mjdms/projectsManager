@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Client {
+  id        String   @id @default(cuid())
+  title     String
+  website   String?
+  rating    Float?
+  phone     String?
+  url       String   @unique
+  score     Int      @default(0)
+  status    String   @default("Active") // Active, Archived
+  type      String?
+  address   String?
+  opinionCount Int?
+  category  String?
+  createdAt DateTime @default(now())
+}
+
+model ScannedArea {
+  id        String   @id @default(cuid())
+  lat       Float
+  lng       Float
+  radius    Float
+  createdAt DateTime @default(now())
+}

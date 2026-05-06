@@ -25,6 +25,18 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative h-screen bg-background text-foreground sm:p-4 lg:p-8 overflow-hidden transition-all duration-300">
       
+      {/* Square grid background pattern — vignette masked */}
+      <div
+        className="pointer-events-none fixed inset-0"
+        aria-hidden
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)`,
+          backgroundSize: '44px 44px',
+          maskImage: 'radial-gradient(ellipse 75% 75% at 50% 50%, transparent 35%, black 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 75% 75% at 50% 50%, transparent 35%, black 80%)',
+        }}
+      />
+
       {/* Ambient gradient blobs for glass to blur */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-blue-400/20 blur-[120px]" />
@@ -106,8 +118,8 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
 
           {/* Sidebar */}
           <div className={cn(
-            "fixed inset-y-0 left-0 z-50 w-72 bg-white/40 backdrop-blur-xl transition-transform duration-500 lg:static lg:w-64 lg:translate-x-0 lg:bg-transparent lg:backdrop-blur-none",
-            isSidebarOpen ? "translate-x-0 border-r border-white/40" : "-translate-x-full"
+            "fixed inset-y-0 left-0 z-50 w-72 bg-white/95 backdrop-blur-xl transition-transform duration-500 lg:static lg:w-64 lg:translate-x-0 lg:bg-transparent lg:backdrop-blur-none",
+            isSidebarOpen ? "translate-x-0 border-r border-border/10" : "-translate-x-full"
           )}>
             <Sidebar onSearchClick={() => setIsCommandPaletteOpen(true)} />
           </div>

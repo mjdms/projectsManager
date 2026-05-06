@@ -67,7 +67,7 @@ export function RecentProjects() {
       <div className="overflow-x-auto custom-scrollbar">
         <table className="w-full text-[12px] table-auto">
           <thead>
-            <tr className="border-t border-border">
+            <tr>
               {["Project", "Client", "Type", "Progress", "Status", "Due"].map((h, i) => (
                 <th key={i} className={cn(
                   "px-5 py-2 text-left text-[10px] font-semibold text-muted-foreground/30 uppercase tracking-widest whitespace-nowrap",
