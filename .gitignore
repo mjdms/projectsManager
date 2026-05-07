@@ -30,7 +30,7 @@ public/debug_map.png
 .DS_Store
 
 # Prisma
-/lib/generated/prisma
+/lib/generated/client
 
 # v0 / Sandbox
 .vercel/
